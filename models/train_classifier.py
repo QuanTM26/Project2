@@ -3,9 +3,10 @@ import pandas as pd
 import numpy as np
 from sqlalchemy import create_engine
 import nltk
-nltk.download('punkt')
+nltk.download(['punkt', 'wordnet'])
 nltk.download('stopwords')
 from nltk.tokenize import word_tokenize
+from nltk.stem import WordNetLemmatizer
 from nltk.corpus import stopwords
 from sklearn.model_selection import train_test_split
 from sklearn.multioutput import MultiOutputClassifier
@@ -52,7 +53,13 @@ def tokenize(text):
     words = [word for word in words if word.isalnum()]
     #Remove stop words
     words = [w for w in words if w not in stopwords.words("english")]
-    return words
+    # apply lemmatization
+    lemmatizer = WordNetLemmatizer()
+    clean_words = []
+    for word in words:
+        clean_word = lemmatizer.lemmatize(word)
+        clean_words.append(clean_word)
+    return clean_words
 
 
 def build_model():
