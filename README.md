@@ -30,11 +30,11 @@ The project also includes a web app where an emergency worker can input a new me
 ---
 The project contains three main folders:
 - data: From here, you can find the necessary datasets and also the python file for cleaning and saving data into a database
-data
-|- disaster_categories.csv # data to process
-|- disaster_messages.csv # data to process
-|- process_data.py
-|- DisasterResponse.db # database to save clean data to
+>data
+>|- disaster_categories.csv # data to process
+>|- disaster_messages.csv # data to process
+>|- process_data.py
+>|- DisasterResponse.db # database to save clean data to
 
 - models: This folder contains a saved model and a python file to build that machine learning model which is applied to categorize the appropriate disasters.
 models
