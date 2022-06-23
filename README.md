@@ -30,5 +30,5 @@ The project also includes a web app where an emergency worker can input a new me
 ---
 The project contains three main folders:
 - data: From here, you can find the necessary datasets and also the python file for cleaning and saving data into a database
-- models: This python file should help build a machine learning model which is applied to categorize the appropriate disasters.
-- app: This python file should be run to generate the web app
+- models: This folder contains a python file should help build a machine learning model which is applied to categorize the appropriate disasters.
+- app: This folder contains a python file which should be run to generate the web app
