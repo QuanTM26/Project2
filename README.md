@@ -1,9 +1,9 @@
 # Disaster Response Pipeline Project
 ## Table of Contents
 
-1. [Summary of the project](https://github.com/QuanTM26/Project2/blob/main/README.md#summary-of-the-project)
-2. [How to run the Python scripts and web app](https://github.com/QuanTM26/Project2/blob/main/README.md#how-to-run-the-python-scripts-and-web-app)
-3. [Explanation of the files](https://github.com/QuanTM26/Project2/blob/main/README.md#explanation-of-the-files)
+1. [Summary of the project](https://github.com/QuanTM26/Project2#summary-of-the-project)
+2. [How to run the Python scripts and web app](https://github.com/QuanTM26/Project2#how-to-run-the-python-scripts-and-web-app)
+3. [Explanation of the files](https://github.com/QuanTM26/Project2#explanation-of-the-files)
 
 ### Summary of the project:
 ---
