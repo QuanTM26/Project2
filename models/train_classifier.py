@@ -17,6 +17,17 @@ import pickle
 from sklearn.metrics import classification_report, confusion_matrix, accuracy_score
 
 def load_data(database_filepath):
+    '''
+    load_data
+    Load data from SQLite database
+
+    database_filepath: filepath to the database
+
+    return:
+    X: dataframe with messages
+    y: dataframe with type of disasters (labels)
+    category_name: list of type of disasters
+    '''
     engine = create_engine('sqlite:///' + database_filepath)
     df = pd.read_sql_table('disaster_response', engine)
     X = df['message']
@@ -26,6 +37,15 @@ def load_data(database_filepath):
 
 
 def tokenize(text):
+    '''
+    tokenize
+    Perform some pre-processing steps with text value
+
+    text: column contains messages
+
+    return:
+    words: valuable keyword of messages
+    '''
     #Split text into words using NLTK
     words = word_tokenize(text.lower())
     #Remove punctuation marks
@@ -36,6 +56,13 @@ def tokenize(text):
 
 
 def build_model():
+    '''
+    build_model
+    Build a machine learning model to categorize the type of disasters
+
+    return:
+    cv: the final model to be applied
+    '''
     pipeline = Pipeline([
         ('vect', CountVectorizer(tokenizer=tokenize)),
         ('tfidf', TfidfTransformer()),
@@ -52,6 +79,15 @@ def build_model():
 
 
 def evaluate_model(model, X_test, Y_test, category_names):
+    '''
+    evaluate_model
+    Evaluate the model the define if it's suitable to be applied
+
+    model: the built model 
+    X_test: the test features data
+    Y_test: the test labels data
+    category_names: list of the types of disasters
+    '''
     Y_pred = model.predict(X_test)
     Y_pred = pd.DataFrame(Y_pred, columns=category_names)
       
@@ -70,6 +106,13 @@ def evaluate_model(model, X_test, Y_test, category_names):
 
 
 def save_model(model, model_filepath):
+    '''
+    save_model
+    Save model to apply for categorizing type of disaster with the unseen messages
+
+    model: the built model
+    model_filepath: filepath to save the model to
+    '''
     file = open(model_filepath, 'wb')
     pickle.dump(model, file)
     pass
