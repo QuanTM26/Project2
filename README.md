@@ -30,5 +30,22 @@ The project also includes a web app where an emergency worker can input a new me
 ---
 The project contains three main folders:
 - data: From here, you can find the necessary datasets and also the python file for cleaning and saving data into a database
-- models: This folder contains a python file should help build a machine learning model which is applied to categorize the appropriate disasters.
-- app: This folder contains a python file which should be run to generate the web app
+data
+|- disaster_categories.csv # data to process
+|- disaster_messages.csv # data to process
+|- process_data.py
+|- DisasterResponse.db # database to save clean data to
+
+- models: This folder contains a saved model and a python file to build that machine learning model which is applied to categorize the appropriate disasters.
+models
+|- train_classifier.py
+|- classifier.pkl # saved model
+
+- app: This folder contains the python file and HTML file which should be run to generate the web app
+app
+| - template
+| |- master.html # main page of web app
+| |- go.html # classification result page of web app
+|- run.py # Flask file that runs app
+
+- README.md: this file shows some instructions to follow to run the scripts above
